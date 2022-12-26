@@ -9,6 +9,7 @@ This is a program to compress and decompress files using Z-Library.
 3. Choose the destination file.
 - Example: "D:\Documents\file.txt"
 4. Profit!
+
 ### Multiple files (de-)compression
 1. (optional) Write a compression level in textbox (only when compressing)
 - Example: "9"
