@@ -10,10 +10,9 @@ This is a program to compress and decompress files using Z-Library.
 
 ### Multiple files (de-)compression
 1. (optional) Write a compression level in textbox (only when compressing). Example: "9"
-2. Write destination files' extension in textbox. Example: ".txt"
-3. You can subtract an extension - simpy type "-" in the beggining. Example: "-.txt"
-4. Press the button "Mass compress" or "Mass decompress" and choose the files.
-5. Profit!
+2. Write destination files' extension in textbox. Example: ".txt". You can subtract an extension - simpy type "-" in the beggining. Example: "-.txt"
+3. Press the button "Mass compress" or "Mass decompress" and choose the files.
+4. Profit!
 
 ## Developers
 Program written using Python by dzhemvrot (me) and osaten.
