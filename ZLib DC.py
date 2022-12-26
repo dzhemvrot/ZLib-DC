@@ -210,7 +210,7 @@ class Window:
 
 zlib was written by Jean-loup Gailly (compression) and Mark Adler (decompression).
 
-Program authors: dzhemvrot; osaten
+Program author: dzhemvrot
 Program version: 3.3
 Program restributed using GPL-3.0 license''')
 
