@@ -15,4 +15,4 @@ This is a program to compress and decompress files using Z-Library.
 4. Profit!
 
 ## Developers
-Program written using Python by dzhemvrot (me) and osaten.
+Program written using Python by dzhemvrot (me).
