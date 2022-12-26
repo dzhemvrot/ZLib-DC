@@ -23,7 +23,7 @@ class Window:
         self.stack = deque(maxlen = 10)
         self.stackcursor = 0
  
-        self.L1 = Label(self.Main, text = "ZLib DC - ZLib De- and Compresser")
+        self.L1 = Label(self.Main, text = "ZLib DC - ZLib (De-)Compresser")
         self.L1.pack(padx = 5, pady = 0)
 
         self.menu = Menu(self.Main)
@@ -112,6 +112,7 @@ class Window:
         myfile.close()
 
     def Mdecompress(self):
+        endel = None
         try:
             endi=self.T2.get(1.0, "end-1c")
         except:
@@ -138,9 +139,9 @@ class Window:
             with open(fnz2, 'rb') as myfile:
                 f = myfile.read()
             #ftypes = [('All files', '*')]
-            if endel is not True:
+            if endel is None or endel is not True:
                 newfilename = fnz2+endi
-            if endel is True:
+            else:
                 newfilename = fnz2.replace(endi, "")
             print(newfilename)
             z = open(newfilename, "ab")
@@ -151,6 +152,7 @@ class Window:
         tk.messagebox.showinfo(title='Success!', message='Files decompressed successfully!')
 
     def Mcompress(self):
+        endel = None
         try:
             endi=self.T2.get(1.0, "end-1c")
         except:
@@ -189,9 +191,9 @@ class Window:
             with open(fnz2, 'rb') as myfile:
                 f = myfile.read()
             #ftypes = [('All files', '*')]
-            if endel is not True:
+            if endel is None or endel is not True:
                 newfilename = fnz2+endi
-            if endel is True:
+            else:
                 newfilename = fnz2.replace(endi, "")
             print(newfilename)
             z = open(newfilename, "ab")
@@ -206,8 +208,10 @@ class Window:
     def About(self):
         tk.messagebox.showinfo(title='About', message='''This is a program to compress and decompress files, using Z-Library.
 
+zlib was written by Jean-loup Gailly (compression) and Mark Adler (decompression).
+
 Program authors: dzhemvrot; osaten
-Program version: 3.2
+Program version: 3.3
 Program restributed using GPL-3.0 license''')
 
 root = Tk()
