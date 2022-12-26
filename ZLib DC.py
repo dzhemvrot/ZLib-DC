@@ -119,8 +119,12 @@ class Window:
 
         if endi == "" or endi is None:
             endi=".txt"
-        if endi.find(".")== -1:
+        if endi.find(".")== -1 and not endi.startswith("-"):
             endi=".txt"
+
+        if endi.startswith("-"):
+            endel = True
+            endi = endi.replace("-", "")
             
         ftypes = [('All files', '*')]
         filename = fd.askopenfilenames(filetypes=ftypes)
@@ -134,7 +138,10 @@ class Window:
             with open(fnz2, 'rb') as myfile:
                 f = myfile.read()
             #ftypes = [('All files', '*')]
-            newfilename = fnz2+endi
+            if endel is not True:
+                newfilename = fnz2+endi
+            if endel is True:
+                newfilename = fnz2.replace(endi, "")
             print(newfilename)
             z = open(newfilename, "ab")
             print("Decompressed String")
@@ -152,8 +159,12 @@ class Window:
         if endi == "" or endi is None:
             endi=".zlib"
 
-        if endi.find(".")== -1:
+        if endi.find(".")== -1 and not endi.startswith("-"):
             endi=".zlib"
+
+        if endi.startswith("-"):
+            endel = True
+            endi = endi.replace("-", "")
 
         try:
             levelc=int(self.T1.get(1.0, "end-1c"))
@@ -178,7 +189,10 @@ class Window:
             with open(fnz2, 'rb') as myfile:
                 f = myfile.read()
             #ftypes = [('All files', '*')]
-            newfilename = fnz2+endi
+            if endel is not True:
+                newfilename = fnz2+endi
+            if endel is True:
+                newfilename = fnz2.replace(endi, "")
             print(newfilename)
             z = open(newfilename, "ab")
             print("Compressed String")
@@ -193,7 +207,7 @@ class Window:
         tk.messagebox.showinfo(title='About', message='''This is a program to compress and decompress files, using Z-Library.
 
 Program authors: dzhemvrot; osaten
-Program version: 3.0
+Program version: 3.2
 Program restributed using GPL-3.0 license''')
 
 root = Tk()
