@@ -53,7 +53,7 @@ class Window:
         newfilename = filename.replace('.txt', '')
         z = open(newfilename, "ab")
         print("Compressed String")
-        z.write(zlib.compress(f))
+        z.write(zlib.compress(f, level=9))
         tk.messagebox.showinfo(title='Success!', message='File compressed successfully!')
 
     def Decompress(self):
@@ -75,6 +75,5 @@ Program authors: dzhemvrot; osaten''')
 root = Tk()
 root.resizable(False, False)
 window = Window(root)
-root.iconbitmap('icon.ico')
 root.title(u'ZLib DC')
 root.mainloop()
