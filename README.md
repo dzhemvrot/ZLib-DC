@@ -1,4 +1,4 @@
-# ZLib-DC
+# ZLib-DC (ZLib De- and Compressor)
 This is a program to compress and decompress files using Z-Library.
 
 ## How to use
